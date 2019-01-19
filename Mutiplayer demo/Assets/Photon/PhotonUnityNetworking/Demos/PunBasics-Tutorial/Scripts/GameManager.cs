@@ -125,7 +125,7 @@ namespace Photon.Pun.Demo.PunBasics
 			{
 				Debug.LogFormat( "OnPlayerEnteredRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient ); // called before OnPlayerLeftRoom
 
-				LoadArena(); 
+				LoadArena();
 			}
 		}
 
