@@ -1,0 +1,60 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WirePuzzle : MonoBehaviour
+{
+
+    public bool nowWirePuzzle;
+    public bool finishedWirePuzzle;
+
+    public GameObject redTrigger;
+    private SphereCollider redSphereCollider;
+
+    public GameObject yellowTrigger;
+    private SphereCollider yellowSphereCollider;
+
+    public GameObject blueTrigger;
+    private SphereCollider blueSphereCollider;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // Find the wireConnected script attached to "redTrigger"
+
+        nowWirePuzzle = false;
+        
+        redSphereCollider = redTrigger.GetComponent<Collider>() as SphereCollider;
+        yellowSphereCollider = yellowTrigger.GetComponent<Collider>() as SphereCollider;
+        blueSphereCollider = blueTrigger.GetComponent<Collider>() as SphereCollider;
+
+        redSphereCollider.enabled = false;
+        yellowSphereCollider.enabled = false;
+        blueSphereCollider.enabled = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (nowWirePuzzle)
+        {
+
+            redSphereCollider.enabled = true;
+            yellowSphereCollider.enabled = true;
+            blueSphereCollider.enabled = true;
+
+
+            if (redTrigger.GetComponent<WireConnected>().active == true 
+                && blueTrigger.GetComponent<WireConnected>().active == true
+                && yellowTrigger.GetComponent<WireConnected>().active == true)
+            {
+                Debug.Log("got all the wires!");
+                finishedWirePuzzle = true;
+                nowWirePuzzle = false;
+            }
+        }
+
+    }
+    
+}
