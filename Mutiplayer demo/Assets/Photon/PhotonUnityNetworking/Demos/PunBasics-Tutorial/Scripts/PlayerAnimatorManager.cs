@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace Photon.Pun.Demo.PunBasics
 {
-	public class PlayerAnimatorManager : MonoBehaviourPun 
+	public class PlayerAnimatorManager : MonoBehaviourPun
 	{
         #region Private Fields
 
@@ -27,15 +27,19 @@ namespace Photon.Pun.Demo.PunBasics
 		/// <summary>
 		/// MonoBehaviour method called on GameObject by Unity during initialization phase.
 		/// </summary>
-	    void Start () 
+	    void Start ()
 	    {
 	        animator = GetComponent<Animator>();
+					if (!animator)
+					{
+							Debug.LogError("PlayerAnimator Manager is Missing Animator Component", this);
+					}
 	    }
-	        
+
 		/// <summary>
 		/// MonoBehaviour method called on GameObject by Unity on every frame.
 		/// </summary>
-	    void Update () 
+	    void Update ()
 	    {
 
 			// Prevent control is connected to Photon and represent the localPlayer
@@ -51,15 +55,15 @@ namespace Photon.Pun.Demo.PunBasics
 			}
 
 			// deal with Jumping
-            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);			
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
 			// only allow jumping if we are running.
             if (stateInfo.IsName("Base Layer.Run"))
             {
 				// When using trigger parameter
-                if (Input.GetButtonDown("Fire2")) animator.SetTrigger("Jump"); 
+                if (Input.GetButtonDown("Fire2")) animator.SetTrigger("Jump");
 			}
-           
+
 			// deal with movement
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
