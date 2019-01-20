@@ -39,6 +39,9 @@ namespace Photon.Pun.Demo.PunBasics
 	    [SerializeField]
 	    private bool followOnStart = false;
 
+        [SerializeField]
+        private Camera RoboCam;
+
         // cached transform of the target
         Transform cameraTransform;
 
@@ -96,7 +99,7 @@ namespace Photon.Pun.Demo.PunBasics
 		/// </summary>
 		public void OnStartFollowing()
 		{	      
-			cameraTransform = Camera.main.transform;
+			cameraTransform = RoboCam.transform;
 			isFollowing = true;
 			// we don't smooth anything, we go straight to the right camera shot
 			Cut();

@@ -554,6 +554,7 @@ MonoBehaviour:
   heightSmoothLag: 0.3
   centerOffset: {x: 0, y: 3, z: 0}
   followOnStart: 0
+  RoboCam: {fileID: 1330132066610743673}
 --- !u!114 &11413802
 MonoBehaviour:
   m_ObjectHideFlags: 0
