@@ -91,7 +91,7 @@ namespace Photon.Pun.Demo.PunBasics
 
             #if UNITY_5_4_OR_NEWER
             // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
-			UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+						UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
             #endif
         }
 
@@ -211,12 +211,12 @@ namespace Photon.Pun.Demo.PunBasics
         #region Private Methods
 
 
-		#if UNITY_5_4_OR_NEWER
-		void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode loadingMode)
-		{
-			this.CalledOnLevelWasLoaded(scene.buildIndex);
-		}
-		#endif
+				#if UNITY_5_4_OR_NEWER
+				void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode loadingMode)
+				{
+					this.CalledOnLevelWasLoaded(scene.buildIndex);
+				}
+				#endif
 
         /// <summary>
         /// Processes the inputs. This MUST ONLY BE USED when the player has authority over this Networked GameObject (photonView.isMine == true)
