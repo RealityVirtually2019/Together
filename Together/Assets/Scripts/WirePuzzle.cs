@@ -11,8 +11,8 @@ public class WirePuzzle : MonoBehaviour
     public GameObject redTrigger;
     private SphereCollider redSphereCollider;
 
-    public GameObject yellowTrigger;
-    private SphereCollider yellowSphereCollider;
+    public GameObject greenTrigger;
+    private SphereCollider greenSphereCollider;
 
     public GameObject blueTrigger;
     private SphereCollider blueSphereCollider;
@@ -26,11 +26,11 @@ public class WirePuzzle : MonoBehaviour
         nowWirePuzzle = false;
         
         redSphereCollider = redTrigger.GetComponent<Collider>() as SphereCollider;
-        yellowSphereCollider = yellowTrigger.GetComponent<Collider>() as SphereCollider;
+        greenSphereCollider = greenTrigger.GetComponent<Collider>() as SphereCollider;
         blueSphereCollider = blueTrigger.GetComponent<Collider>() as SphereCollider;
 
         redSphereCollider.enabled = false;
-        yellowSphereCollider.enabled = false;
+        greenSphereCollider.enabled = false;
         blueSphereCollider.enabled = false;
     }
 
@@ -41,13 +41,13 @@ public class WirePuzzle : MonoBehaviour
         {
 
             redSphereCollider.enabled = true;
-            yellowSphereCollider.enabled = true;
+            greenSphereCollider.enabled = true;
             blueSphereCollider.enabled = true;
 
 
             if (redTrigger.GetComponent<WireConnected>().active == true 
-                || blueTrigger.GetComponent<WireConnected>().active == true
-                || yellowTrigger.GetComponent<WireConnected>().active == true)
+                && blueTrigger.GetComponent<WireConnected>().active == true
+                && greenTrigger.GetComponent<WireConnected>().active == true)
             {
                 Debug.Log("got all the wires!");
                 finishedWirePuzzle = true;
