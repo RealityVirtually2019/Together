@@ -40,9 +40,9 @@ public class LightPuzzle : MonoBehaviour
 
         Color full = Color.white;
         full.a = 1f;
-        while (true)
-        {
+        
+        
             rend.material.color = Color.Lerp(inv, full, Time.deltaTime * sec);
-        }
+        
     }
 }
