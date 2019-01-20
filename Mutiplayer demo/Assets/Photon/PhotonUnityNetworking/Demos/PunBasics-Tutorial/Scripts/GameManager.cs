@@ -36,22 +36,9 @@ namespace Photon.Pun.Demo.PunBasics
 
 		private GameObject instance;
 
-        [Tooltip("The prefab to use for representing the player 1")]
+        [Tooltip("The prefab to use for representing the player")]
         [SerializeField]
-        private GameObject Player1Prefab;
-
-				[Tooltip("The prefab to use for representing the player 2")]
-        [SerializeField]
-        private GameObject Player2Prefab;
-
-				[Tooltip("The prefab to use for representing the player 3")]
-				[SerializeField]
-				private GameObject Player3Prefab;
-
-				[Tooltip("The prefab to use for representing the player 4")]
-				[SerializeField]
-				private GameObject Player4Prefab;
-
+        private GameObject playerPrefab;
 
         #endregion
 
@@ -72,44 +59,22 @@ namespace Photon.Pun.Demo.PunBasics
 				return;
 			}
 
-			if (Player1Prefab == null) { // #Tip Never assume public properties of Components are filled up properly, always check and inform the developer of it.
+			if (playerPrefab == null) { // #Tip Never assume public properties of Components are filled up properly, always check and inform the developer of it.
 
-				Debug.LogError("<Color=Red><b>Missing</b></Color> Player1Prefab Reference. Please set it up in GameObject 'Game Manager'", this);
-			} else if (Player2Prefab == null) {
-				Debug.LogError("<Color=Red><b>Missing</b></Color> Player2Prefab Reference. Please set it up in GameObject 'Game Manager'", this);
-			} else if (Player3Prefab == null) {
-				Debug.LogError("<Color=Red><b>Missing</b></Color> Player3Prefab Reference. Please set it up in GameObject 'Game Manager'", this);
-			} else if (Player4Prefab == null) {
-				Debug.LogError("<Color=Red><b>Missing</b></Color> Player4Prefab Reference. Please set it up in GameObject 'Game Manager'", this);
-			}	else {
+				Debug.LogError("<Color=Red><b>Missing</b></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
+			} else {
 
 
-			if (PlayerManager.LocalPlayerInstance==null)
-			{
-			    Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
-
-
-				// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-				if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+				if (PlayerManager.LocalPlayerInstance==null)
 				{
-					Debug.Log("We load first player");
+				    Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
 
-					// #Critical
-					PhotonNetwork.Instantiate(this.Player1Prefab.name, new Vector3(0f,0f,0f), Quaternion.identity, 0);
-				} else if (PhotonNetwork.CurrentRoom.PlayerCount == 2) {
-					PhotonNetwork.Instantiate(this.Player2Prefab.name, new Vector3(0f,6f,0f), Quaternion.identity, 0);
-				} else if (PhotonNetwork.CurrentRoom.PlayerCount == 3) {
-					PhotonNetwork.Instantiate(this.Player3Prefab.name, new Vector3(0f,6f,0f), Quaternion.identity, 0);
-				} else if (PhotonNetwork.CurrentRoom.PlayerCount == 4) {
-					PhotonNetwork.Instantiate(this.Player4Prefab.name, new Vector3(0f,6f,0f), Quaternion.identity, 0);
-				} else {
-					Debug.Log("more people in room then max of 4");
+					// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+					PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,0f,0f), Quaternion.identity, 0);
+				}else{
+
+					Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
 				}
-
-			}else{
-
-				Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
-			}
 
 
 			}
@@ -147,7 +112,7 @@ namespace Photon.Pun.Demo.PunBasics
 
 				LoadArena();
 
-      }
+            }
 		}
 
 		/// <summary>
