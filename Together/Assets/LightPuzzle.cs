@@ -9,8 +9,10 @@ public class LightPuzzle : MonoBehaviour
 
         //setting color
     public Color color = Color.white;
-    private Color red = Color.red;
+    private Color solid = Color.white;
     Renderer rend;
+    private float sec = 2f;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -19,22 +21,28 @@ public class LightPuzzle : MonoBehaviour
         //setting opacity of color
         color.a = 0f;
         rend.material.color = color;
+        solid.a = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        red.a = .1f;
-        rend.material.color = red;
+        
+        fadeIn();
     }
-    IEnumerator FadeIn()
+   
+    void fadeIn()
     {
-        for (float f = 0.05f; f <= 1; f += 0.05f)
+        // float startOpacity = 0.0f;
+        //float endOpacity = 1f;
+        Color inv = Color.white;
+        inv.a = 0f;
+
+        Color full = Color.white;
+        full.a = 1f;
+        while (true)
         {
-            Color color = rend.material.color;
-            color.a = f;
-            rend.material.color = color;
-            yield return new WaitForSeconds(0.5f);
+            rend.material.color = Color.Lerp(inv, full, Time.deltaTime * sec);
         }
     }
 }

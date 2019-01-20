@@ -17,6 +17,7 @@ public class RayCast : MonoBehaviour
     void Start()
     {
         lightPuzzle = LightBox.GetComponent<LightPuzzle>();
+        
     }
 
     // Update is called once per frame
