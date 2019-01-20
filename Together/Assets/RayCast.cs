@@ -31,9 +31,14 @@ public class RayCast : MonoBehaviour
     {
         RaycastHit hit;
 
-        if(Physics.Raycast(lightRay.transform.position, lightRay.transform.forward, out hit, lightRange))
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit))
         {
-            Debug.Log(hit.transform.name);
+            hit.transform.SendMessage("hitByRay");
+        }
+
+        if (Physics.Raycast(lightRay.transform.position, lightRay.transform.forward, out hit, lightRange))
+        {
+           Debug.Log(hit.transform.name);
             if (hit.distance < lightRange)
             {
 

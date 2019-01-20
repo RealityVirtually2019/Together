@@ -40,9 +40,18 @@ public class LightPuzzle : MonoBehaviour
 
         Color full = Color.white;
         full.a = 1f;
-        
-        
-            rend.material.color = Color.Lerp(inv, full, Time.deltaTime * sec);
+
+       // Color change = 
+
+
+        //float lerp = Mathf.PingPong(Time.time, sec) / sec;
+        //rend.material.Lerp(inv, full, lerp);
+
+        rend.material.color = Color.Lerp(inv, full, Time.deltaTime * sec);
+       // if (full.a > 1)
+        //{
+          //  rend.material.color = Color.white;
+        //}
         
     }
 }
