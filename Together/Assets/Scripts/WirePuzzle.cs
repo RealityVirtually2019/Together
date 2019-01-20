@@ -46,8 +46,8 @@ public class WirePuzzle : MonoBehaviour
 
 
             if (redTrigger.GetComponent<WireConnected>().active == true 
-                && blueTrigger.GetComponent<WireConnected>().active == true
-                && yellowTrigger.GetComponent<WireConnected>().active == true)
+                || blueTrigger.GetComponent<WireConnected>().active == true
+                || yellowTrigger.GetComponent<WireConnected>().active == true)
             {
                 Debug.Log("got all the wires!");
                 finishedWirePuzzle = true;
