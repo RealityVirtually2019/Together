@@ -39,6 +39,9 @@ namespace Photon.Pun.Demo.PunBasics
 	    [SerializeField]
 	    private bool followOnStart = false;
 
+			[Tooltip("Set this the camera.")]
+			[SerializeField]
+			private Camera PlayerCamera;
         // cached transform of the target
         Transform cameraTransform;
 
@@ -73,7 +76,7 @@ namespace Photon.Pun.Demo.PunBasics
 		/// </summary>
 		void LateUpdate()
 		{
-			// The transform target may not destroy on level load, 
+			// The transform target may not destroy on level load,
 			// so we need to cover corner cases where the Main Camera is different everytime we load a new scene, and reconnect when that happens
 			if (cameraTransform == null && isFollowing)
 			{
@@ -91,12 +94,12 @@ namespace Photon.Pun.Demo.PunBasics
 		#region Public Methods
 
 		/// <summary>
-		/// Raises the start following event. 
+		/// Raises the start following event.
 		/// Use this when you don't know at the time of editing what to follow, typically instances managed by the photon network.
 		/// </summary>
 		public void OnStartFollowing()
-		{	      
-			cameraTransform = Camera.main.transform;
+		{
+			cameraTransform = PlayerCamera.transform;
 			isFollowing = true;
 			// we don't smooth anything, we go straight to the right camera shot
 			Cut();
@@ -123,7 +126,7 @@ namespace Photon.Pun.Demo.PunBasics
 			currentAngle = targetAngle;
 
 	        targetHeight = targetCenter.y + height;
-	        
+
 	        // Damp the height
 	        float currentHeight = cameraTransform.position.y;
 	        currentHeight = Mathf.SmoothDamp( currentHeight, targetHeight, ref heightVelocity, heightSmoothLag );
@@ -139,11 +142,11 @@ namespace Photon.Pun.Demo.PunBasics
 	        // Set the height of the camera
 	        cameraTransform.position = new Vector3( cameraTransform.position.x, currentHeight, cameraTransform.position.z );
 
-	        // Always look at the target	
+	        // Always look at the target
 	        SetUpRotation(targetCenter);
 	    }
 
-	   
+
 		/// <summary>
 		/// Directly position the camera to a the specified Target and center.
 		/// </summary>

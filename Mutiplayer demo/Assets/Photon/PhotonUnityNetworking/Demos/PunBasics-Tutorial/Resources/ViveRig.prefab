@@ -4799,7 +4799,7 @@ Camera:
     height: 1
   near clip plane: 0.05
   far clip plane: 1000
-  field of view: 60
+  field of view: 30.1
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -5278,8 +5278,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 2761773935113915327}
-  viewIdField: 7
-  InstantiationId: 7
+  viewIdField: 6
+  InstantiationId: 6
   isRuntimeInstantiated: 0
 --- !u!114 &2761773935113915327
 MonoBehaviour:
@@ -5408,8 +5408,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 8376630027422604430}
-  viewIdField: 6
-  InstantiationId: 6
+  viewIdField: 7
+  InstantiationId: 7
   isRuntimeInstantiated: 0
 --- !u!114 &8376630027422604430
 MonoBehaviour:
