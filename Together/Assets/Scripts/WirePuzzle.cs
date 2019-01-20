@@ -7,6 +7,7 @@ public class WirePuzzle : MonoBehaviour
 
     public bool nowWirePuzzle = false;
     public bool finishedWirePuzzle;
+    public Light terminalLight;
 
     public GameObject redTrigger;
     private SphereCollider redSphereCollider;
@@ -21,9 +22,9 @@ public class WirePuzzle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Find the wireConnected script attached to "redTrigger"
+        terminalLight.enabled = false;
 
-        
+
         redSphereCollider = redTrigger.GetComponent<Collider>() as SphereCollider;
         greenSphereCollider = greenTrigger.GetComponent<Collider>() as SphereCollider;
         blueSphereCollider = blueTrigger.GetComponent<Collider>() as SphereCollider;
@@ -44,12 +45,13 @@ public class WirePuzzle : MonoBehaviour
 
 
             if (redTrigger.GetComponent<WireConnected>().active == true 
-                && blueTrigger.GetComponent<WireConnected>().active == true
-                && greenTrigger.GetComponent<WireConnected>().active == true)
+                    && blueTrigger.GetComponent<WireConnected>().active == true
+                    && greenTrigger.GetComponent<WireConnected>().active == true)
             {
                 Debug.Log("got all the wires!");
                 finishedWirePuzzle = true;
                 nowWirePuzzle = false;
+                terminalLight.enabled = true; //terminal powers on
             }
         }
 

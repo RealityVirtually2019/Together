@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Intro : MonoBehaviour
 {
-    private WirePuzzle wireFun;
     public bool nowOutro;
+    
+
+    private WirePuzzle wireFun;
+    
     //public Rigidbody cyrochamber;
     // Start is called before the first frame update
     void Start()
@@ -19,8 +22,11 @@ public class Intro : MonoBehaviour
     void Update()
     {
         //IntroPuzzle();
-
-        if (wireFun.finishedWirePuzzle)
+        if(nowOutro)
+        {
+            
+        }
+        else if (wireFun.finishedWirePuzzle)
         {
             nowOutro = true;
         }
