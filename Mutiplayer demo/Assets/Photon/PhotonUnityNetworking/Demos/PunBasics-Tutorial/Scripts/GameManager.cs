@@ -88,6 +88,12 @@ namespace Photon.Pun.Demo.PunBasics
 			{
 			    Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
 
+<<<<<<< HEAD
+=======
+					// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+					PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,5f,0f), Quaternion.identity, 0);
+				}else{
+>>>>>>> parent of 0df1754... added tracking to networking of the htc viv rig
 
 				// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
 				if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
@@ -121,9 +127,14 @@ namespace Photon.Pun.Demo.PunBasics
 		/// </summary>
 		void Update()
 		{
+<<<<<<< HEAD
 
             // "back" button of phone equals "Escape". quit app if that's pressed
             if (Input.GetKeyDown(KeyCode.Escape))
+=======
+			// "back" button of phone equals "Escape". quit app if that's pressed
+			if (Input.GetKeyDown(KeyCode.Escape))
+>>>>>>> parent of 0df1754... added tracking to networking of the htc viv rig
 			{
 				QuitApplication();
 			}
@@ -146,8 +157,12 @@ namespace Photon.Pun.Demo.PunBasics
 				Debug.LogFormat( "OnPlayerEnteredRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient ); // called before OnPlayerLeftRoom
 
 				LoadArena();
+<<<<<<< HEAD
 
       }
+=======
+			}
+>>>>>>> parent of 0df1754... added tracking to networking of the htc viv rig
 		}
 
 		/// <summary>
