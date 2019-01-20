@@ -5,6 +5,7 @@ using UnityEngine;
 public class Intro : MonoBehaviour
 {
     private WirePuzzle wireFun;
+    public bool nowOutro;
     //public Rigidbody cyrochamber;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class Intro : MonoBehaviour
 
         if (wireFun.finishedWirePuzzle)
         {
-            //start outro
+            nowOutro = true;
         }
         
         
@@ -55,6 +56,8 @@ public class Intro : MonoBehaviour
 
     private void Outro()
     {
-        
+        //animate light
+        //open door
+
     }
 }

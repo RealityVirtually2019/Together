@@ -5,7 +5,7 @@ using UnityEngine;
 public class WirePuzzle : MonoBehaviour
 {
 
-    public bool nowWirePuzzle;
+    public bool nowWirePuzzle = false;
     public bool finishedWirePuzzle;
 
     public GameObject redTrigger;
@@ -23,7 +23,6 @@ public class WirePuzzle : MonoBehaviour
     {
         // Find the wireConnected script attached to "redTrigger"
 
-        nowWirePuzzle = false;
         
         redSphereCollider = redTrigger.GetComponent<Collider>() as SphereCollider;
         greenSphereCollider = greenTrigger.GetComponent<Collider>() as SphereCollider;
@@ -39,7 +38,6 @@ public class WirePuzzle : MonoBehaviour
     {
         if (nowWirePuzzle)
         {
-
             redSphereCollider.enabled = true;
             greenSphereCollider.enabled = true;
             blueSphereCollider.enabled = true;
