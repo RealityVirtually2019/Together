@@ -1,71 +1,52 @@
 fileFormatVersion: 2
-guid: 4f9172c9dfcda3241bda4698bab9e6cb
+guid: 5ab5eaf46f16c184a94df448497fe4a2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Cylinder
-    100002: CylinderFBXASC046000
-    100004: CylinderFBXASC046001
-    100006: Plane
-    100008: PlaneFBXASC046001
-    100010: PlaneFBXASC046002
-    100012: //RootNode
-    100014: Sphere
-    100016: Plane_Cylinder
-    100018: Plane_CylinderFBXASC046000
-    100020: Plane_CylinderFBXASC046001
-    100022: Plane_Sphere
+    100002: Cylinder.000
+    100004: Cylinder.001
+    100006: joint1
+    100008: joint2
+    100010: joint3
+    100012: Plane
+    100014: Plane.001
+    100016: Plane.002
+    100018: //RootNode
+    100020: Sphere
     400000: Cylinder
-    400002: CylinderFBXASC046000
-    400004: CylinderFBXASC046001
-    400006: Plane
-    400008: PlaneFBXASC046001
-    400010: PlaneFBXASC046002
-    400012: //RootNode
-    400014: Sphere
-    400016: Plane_Cylinder
-    400018: Plane_CylinderFBXASC046000
-    400020: Plane_CylinderFBXASC046001
-    400022: Plane_Sphere
-    2100000: CylinderSG
-    2100002: PlaneSG1
-    2100004: PlaneSG
-    2100006: PlaneFBXASC046001SG
-    2100008: PlaneFBXASC046001SG1
-    2100010: SphereSG
-    2300000: Cylinder
-    2300002: CylinderFBXASC046000
-    2300004: CylinderFBXASC046001
-    2300006: Plane
-    2300008: PlaneFBXASC046001
-    2300010: PlaneFBXASC046002
-    2300012: Sphere
-    2300014: Plane_Cylinder
-    2300016: Plane_CylinderFBXASC046000
-    2300018: Plane_CylinderFBXASC046001
-    2300020: Plane_Sphere
-    3300000: Cylinder
-    3300002: CylinderFBXASC046000
-    3300004: CylinderFBXASC046001
-    3300006: Plane
-    3300008: PlaneFBXASC046001
-    3300010: PlaneFBXASC046002
-    3300012: Sphere
-    3300014: Plane_Cylinder
-    3300016: Plane_CylinderFBXASC046000
-    3300018: Plane_CylinderFBXASC046001
-    3300020: Plane_Sphere
-    4300000: Cylinder
-    4300002: CylinderFBXASC046000
-    4300004: CylinderFBXASC046001
-    4300006: Plane
-    4300008: PlaneFBXASC046001
-    4300010: PlaneFBXASC046002
-    4300012: Sphere
-    4300014: Plane_Cylinder
-    4300016: Plane_CylinderFBXASC046000
-    4300018: Plane_CylinderFBXASC046001
-    4300020: Plane_Sphere
+    400002: Cylinder.000
+    400004: Cylinder.001
+    400006: joint1
+    400008: joint2
+    400010: joint3
+    400012: Plane
+    400014: Plane.001
+    400016: Plane.002
+    400018: //RootNode
+    400020: Sphere
+    2100000: Material.001
+    2100002: Material.003
+    2100004: Material.002
+    2100006: Material.006
+    2100008: Material.005
+    2100010: Material.004
+    4300000: Plane.001
+    4300002: Plane
+    4300004: Sphere
+    4300006: Cylinder.001
+    4300008: Cylinder.000
+    4300010: Cylinder
+    4300012: Plane.002
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Cylinder
+    13700002: Cylinder.000
+    13700004: Cylinder.001
+    13700006: Plane
+    13700008: Plane.001
+    13700010: Plane.002
+    13700012: Sphere
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -93,7 +74,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -118,8 +127,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -146,7 +155,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
