@@ -22,6 +22,10 @@ public class WirePuzzle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        redTrigger.GetComponent<MeshRenderer>().enabled = false;
+        greenTrigger.GetComponent<MeshRenderer>().enabled = false;
+        blueTrigger.GetComponent<MeshRenderer>().enabled = false;
+
         terminalLight.enabled = false;
 
 

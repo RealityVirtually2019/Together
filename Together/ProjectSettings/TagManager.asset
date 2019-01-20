@@ -8,6 +8,9 @@ TagManager:
   - TeleportIgnore
   - MissingWireComponent
   - WireTriggers
+  - Red
+  - Green
+  - Blue
   layers:
   - Default
   - TransparentFX

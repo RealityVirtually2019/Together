@@ -5,33 +5,60 @@ using UnityEngine;
 public class Intro : MonoBehaviour
 {
     public bool nowOutro;
-    
+    public GameObject redWires;
+    public GameObject greenWires;
+    public GameObject blueWires;
 
     private WirePuzzle wireFun;
-    
+
     //public Rigidbody cyrochamber;
     // Start is called before the first frame update
     void Start()
     {
+
+        if (gameObject.CompareTag("Red"))
+        {
+            redWires.SetActive(true);
+            greenWires.SetActive(false);
+            blueWires.SetActive(false);
+        }
+        else if(gameObject.CompareTag("Green"))
+        {
+            redWires.SetActive(false);
+            greenWires.SetActive(true);
+            blueWires.SetActive(false);
+        }
+        else if (gameObject.CompareTag("Blue"))
+        {
+            redWires.SetActive(false);
+            greenWires.SetActive(false);
+            blueWires.SetActive(true);
+        }
+        else
+        {
+            redWires.SetActive(false);
+            greenWires.SetActive(false);
+            blueWires.SetActive(false);
+        }
         wireFun = GetComponent<WirePuzzle>();
         Begin();
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //IntroPuzzle();
-        if(nowOutro)
+        if (nowOutro)
         {
-            
+
         }
         else if (wireFun.finishedWirePuzzle)
         {
             nowOutro = true;
         }
-        
-        
+
+
         //Outro();
     }
 
