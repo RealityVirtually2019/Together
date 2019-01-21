@@ -63,8 +63,9 @@ namespace Photon.Pun.Demo.PunBasics
         /// </summary>
         void Start()
 		{
-			// Start following the target if wanted.
-			if (followOnStart)
+            RoboCam.enabled = false;
+            // Start following the target if wanted.
+            if (followOnStart)
 			{
 				OnStartFollowing();
 			}
