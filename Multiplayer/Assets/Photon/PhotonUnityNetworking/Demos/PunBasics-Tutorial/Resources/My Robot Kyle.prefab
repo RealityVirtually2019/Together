@@ -503,7 +503,7 @@ MonoBehaviour:
   - {fileID: 11400010}
   - {fileID: 11449706}
   - {fileID: 11413802}
-  viewIdField: 1
+  viewIdField: 0
   InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &11400010
